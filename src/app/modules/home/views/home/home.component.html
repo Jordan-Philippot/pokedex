@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h2>My Pokedex</h2>
+
+
+  <div id="search-component">
+    <form>
+      <label for="pokeName">Rechecher un pokémon</label>
+      <div>
+        <input type="text" id="pokeName" name="pokeName" #pokeName>
+        <button mat-raised-button color="primary" type="button" (click)="clickme(pokeName.value)">Rechercher</button>
+      </div>
+    </form>
+  </div>
+
+
+  <h2>Votre résultat de recherche:</h2>
+
+  <div class="container-search" *ngIf="pokemonDetails?.id">
+
+    <mat-card>
+      <mat-card-header>
+        <img class="img-responsive"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{pokemonDetails?.id}}.png" />
+        <span class="badge">{{pokemonDetails?.name}} </span>
+      </mat-card-header>
+
+      <mat-card-content>
+        <span class="badge">{{pokemonDetails?.weight}} hectograms</span>
+        <span class="badge">lvl {{pokemonDetails?.base_experience}}</span>
+        <span class="badge">{{pokemonDetails?.height}} decimetres</span>
+
+      </mat-card-content>
+      <mat-card-footer>
+
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+
+  <div class="container-pokedex">
+    <mat-card *ngFor="let poke of pokedex">
+      <mat-card-content>
+        <a routerLink="/pokemon/{{poke.url | slice: (poke.url.length - 2) :(poke.url.length - 1)}}">
+          <span class="badge">{{poke.name}} </span>
+        </a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

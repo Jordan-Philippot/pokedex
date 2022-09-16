@@ -1,0 +1,26 @@
+<div class="container">
+
+    <h2>Détail du Pokémon</h2>
+
+    <div class="container-pokedex">
+        <mat-card>
+            <mat-card-header>
+                <img class="img-responsive"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{IPokemonDetails?.id}}.png" />
+                <span class="badge">{{IPokemonDetails?.name}} </span>
+            </mat-card-header>
+
+            <mat-card-content>
+                <span class="badge">{{IPokemonDetails?.weight}} hectograms</span>
+                <span class="badge">lvl {{IPokemonDetails?.base_experience}}</span>
+                <span class="badge">{{IPokemonDetails?.height}} decimetres</span>
+                <div *ngFor="let ability of IPokemonDetails?.abilities?.[0]?.ability">
+                    <span class="badge">{{ability?.name}}</span>
+                </div>
+            </mat-card-content>
+            <mat-card-footer>
+                
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>

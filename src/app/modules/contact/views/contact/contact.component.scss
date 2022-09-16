@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--container-width);
+    padding: var(--container-gutter);
+    margin: 0 auto;
+    h2 {
+        text-align: center;
+        margin: 50px auto;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+    .section{
+        width: 33vw;
+        height: auto;
+        margin: auto;
+    }
+}
